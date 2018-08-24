@@ -41,3 +41,28 @@ class KartGUI:
     self.bankTwo.grid(row=0, column=2, padx=1, pady=1) #End of bankTwo
     
   def startKart(self):
+    if self.startCar == True: #Unsure
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END) #Add comment
+      self.text.insert(INSERT, 'Go kart already on!\n')
+      self.text.config(state=DISABLED)
+    else
+      time.sleep(1)
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Go kart on!\n')
+      self.text.config(state=DISABLED)
+      self.startCar = True
+      
+  def offKart(self):
+    self.startCar = False #Unsure
+    self.in_reverse = False
+    self.in_forward = False
+    time.sleep(1)
+    self.text.config(state=NORMAL)
+    self.text.delete('1.0', END)
+    self.text.insert(INSERT, 'Go kart is turning off!\n')
+    self.text.config(state=DISABLED)
+  def neutralKart(self):
+    if self.startCar == True: #Unsure
+      
