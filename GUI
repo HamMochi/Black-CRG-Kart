@@ -3,7 +3,7 @@ import RPi.GPIO as GPIO
 import time
 
 class KartGUI:
-  def __init__(self, master): #test
+  def __init__(self, master): #Test
     self.power_source = "None"
     self.startCar = False
     self.in_reverse = False
@@ -20,13 +20,24 @@ class KartGUI:
     self.text.pack(side=BOTTOM)
     
     self.start = Button(frame, text="START", fg="blue", font = ('Courier', 16), height = 3, width = 8, command=self.startKart)
-    self.start.grid(row=0, column=0, padx=1, pady=1) #End of start kart
+    self.start.grid(row=0, column=0, padx=1, pady=1) #End of start
     
     self.off = Button(frame, text="OFF", font = ('Courier', 16), fg="red", height = 3, width = 8, command=self.offKart)
-    self.off.grid(row=1, column=0, padx=1, pady=1) #End of off kart
+    self.off.grid(row=1, column=0, padx=1, pady=1) #End of off
     
-    self.forward = Button(frame, text="Forward", bg"green", fg="white", font = ('Courier', 16), height = 3, width = 8, command=self.forwardKart)
-    self.forward.grid(row=0, column=1, padx=1, pady=1) #End of forward kart
+    self.forward = Button(frame, text="Forward", bg="green", fg="white", font = ('Courier', 16), height = 3, width = 8, command=self.forwardKart)
+    self.forward.grid(row=0, column=1, padx=1, pady=1) #End of forward
     
-    self.neutral = Button(frame, text="Neutral", fg"black", font = ('Courier', 16), height = 3, width = 8, command=self.neutralKart)
-    self.neutral.grid(row=1, column=1, padx=1, pady=1) #End of neutral kart
+    self.neutral = Button(frame, text="Neutral", fg="black", font = ('Courier', 16), height = 3, width = 8, command=self.neutralKart)
+    self.neutral.grid(row=1, column=1, padx=1, pady=1) #End of neutral
+    
+    self.reverse = Button(frame, text="Reverse", bg="red", fg="white", font = ('Courier', 16), height = 3, width = 8, command=self.reverseKart)
+    self.reverse.grid(row=2, column=1, padx=1, pady=1) #End of reverse
+    
+    self.bankOne = Button(frame, text="Bank 1",bg="yellow", fg="blue", font = ('Courier', 16), height = 3, width = 8, command=self.bankOne)
+    self.bankOne.grid(row=1, column=2, padx=1, pady=1) #End of bankOne
+    
+    self.bankTwo = Button(frame, text="Bank 2",bg="yellow", fg="blue", font = ('Courier', 16), height = 3, width = 8, command=self.bankTwo)
+    self.bankTwo.grid(row=0, column=2, padx=1, pady=1) #End of bankTwo
+    
+  def startKart(self):
