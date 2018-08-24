@@ -46,7 +46,7 @@ class KartGUI:
       self.text.delete('1.0', END) #Add comment
       self.text.insert(INSERT, 'Go kart already on!\n')
       self.text.config(state=DISABLED)
-    else
+    else:
       time.sleep(1)
       self.text.config(state=NORMAL)
       self.text.delete('1.0', END)
@@ -63,6 +63,72 @@ class KartGUI:
     self.text.delete('1.0', END)
     self.text.insert(INSERT, 'Go kart is turning off!\n')
     self.text.config(state=DISABLED)
+    
   def neutralKart(self):
     if self.startCar == True: #Unsure
+      self.in_reverse = False
+      self.in_forward = False
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Go kart is in neutral.\n')
+      self.text.config(state=DISABLED)
+    else:
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Go isn\'t on. Turn it on???\n')
+      self.text.config(state=DISABLED)
+      
+  def forwardKart(self):
+    if self.startCar == True: #Unsure
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Vroom forward\n')
+      self.text.config(state=DISABLED)
+      self.in_reverse = False
+      self.in_neutral = False
+    else:
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Go isn\'t on. Turn it on???\n')
+      self.text.config(state=DISABLED)
+      
+  def reverseKart(self):
+    if self.startCar == True: #Unsure
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Vroom reverse\n')
+      self.text.config(state=DISABLED)
+    else:
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Go isn\'t on. Turn it on???\n')
+      self.text.config(state=DISABLED)
+      
+  def bankOne(self):
+    if self.startCar == True: #Unsure
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Bank One is on\n')
+      self.text.config(state=DISABLED)
+    else:
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Bank Two is charging\n')
+      self.text.config(state=DISABLED)
+      
+  def bankTwo(self):
+    if self.startCar == True: #Unsure
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Bank Two is on\n')
+      self.text.config(state=DISABLED)
+    else:
+      self.text.config(state=NORMAL)
+      self.text.delete('1.0', END)
+      self.text.insert(INSERT, 'Bank One is charging\n')
+      self.text.config(state=DISABLED)
+    
+root = Tk()
+KartGUI = KartGUI(root)
+root.mainloop()
       
