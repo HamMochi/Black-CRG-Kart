@@ -13,7 +13,7 @@ class KartGUI:
     root.massize(width=600, height=600)
     frame = Frame(master)
     frame.pack()
-    self.text = Text(stateNORMAL, font=('Courier', 16), fg = "black"
+    self.text = Text(stateNORMAL, font=('Courier', 16), fg = "black")
     self.text.insert(INSERT, 'TEAM BLACK CAR')
     
     self.text.config(state=DISABLED)
